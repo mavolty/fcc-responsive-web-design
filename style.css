@@ -1,0 +1,314 @@
+/* ==========
+CUSTOM PROPERTIES
+========== */
+
+:root {
+  --clr-gray-800: #242424;
+  --clr-gray-50: #f9fafb;
+
+  --fs-sm: 1rem;
+  --fs-base: 1.125rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2.25rem;
+  --fs-2xl: 4rem;
+  --fs-3xl: 6rem;
+  --fs-4xl: 9rem;
+
+  --letter-space: -2%;
+
+  --gap-sm: 0.5rem;
+  --gap-reg: 1.125rem;
+  --gap-lg: 1.5rem;
+  --gap-xl: 4rem;
+  --gap-2xl: 6rem;
+}
+
+/* ==========
+RESET
+========== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========
+BASE STYLES
+========== */
+
+body {
+  color: var(--clr-gray-800);
+  background-color: var(--clr-gray-50);
+  font-size: var(--fs-base);
+  font-family: 'Clash Display', sans-serif;
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+}
+
+.container {
+  width: 95%;
+  max-width: 80rem;
+  padding-inline: 2rem;
+  margin-inline: auto;
+}
+
+.nav-link,
+.project-link,
+.profile-link {
+  color: var(--clr, var(--clr-gray-800));
+  font: inherit;
+  text-decoration: none;
+}
+
+.watch,
+.github {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ==========
+TYPOGRAPHY
+========== */
+
+.text-lg,
+.text-xl,
+.text-2xl {
+  color: var(--clr, var(--clr-gray-800));
+  letter-spacing: -2%;
+}
+
+.text-lg {
+  font-size: var(--fs-base);
+  font-weight: 400;
+}
+
+.text-xl {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-2xl {
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  line-height: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .text-lg {
+    font-size: var(--fs-lg);
+    line-height: 1.3;
+  }
+
+  .text-xl {
+    font-size: var(--fs-2xl);
+    line-height: 1;
+  }
+
+  .text-2xl {
+    font-size: var(--fs-3xl);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .text-xl {
+    font-size: var(--fs-2xl);
+    line-height: 1;
+  }
+
+  .text-2xl {
+    font-size: var(--fs-4xl);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .text-lg {
+    font-size: var(--fs-xl);
+    line-height: 1.2;
+  }
+}
+
+/* ==========
+HEADER
+========== */
+
+header {
+  height: 100vh;
+}
+
+header .container {
+  height: 100%;
+}
+
+.nav {
+  background-color: var(--clr-gray-50);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding-block: 2rem;
+  width: 100%;
+}
+
+.nav-list {
+  font-weight: 500;
+  display: flex;
+  gap: var(--gap-xl);
+  margin: 0;
+}
+
+#welcome-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ==========
+MAIN
+========== */
+
+main {
+  background-color: var(--clr-gray-800);
+  padding-block: var(--gap-xl);
+}
+
+/* PROJECTS */
+.projects {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding-block: var(--gap-2xl);
+}
+
+.projects > * + * {
+  margin-top: var(--gap-2xl);
+}
+
+.project-tile > * + * {
+  margin-top: var(--gap-lg);
+}
+
+.project-title {
+  --clr: var(--clr-gray-50);
+  max-width: 26.25rem;
+}
+
+.project-image {
+  width: 100%;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-reg);
+}
+
+@media screen and (min-width: 600px) {
+  .project-info {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.project-detail {
+  display: flex;
+  gap: var(--gap-reg);
+}
+
+.project-link {
+  --clr: var(--clr-gray-50);
+  font-size: var(--fs-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+/* ==========
+FOOTER
+========== */
+
+footer {
+  height: 100vh;
+}
+
+footer .container {
+  height: 100%;
+}
+
+.profile {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
